@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "skill-creator-anth-inspired": {
+      "source": "sanathusk/skills",
+      "sourceType": "github",
+      "skillPath": "skill-creator-anth-inspired/SKILL.md",
+      "computedHash": "176b4b729712dc245e84726621c293fda1eca803186de3051f28b0d86382165f"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 # Plan Product
 
-Establish foundational product documentation through an interactive conversation. Creates mission, roadmap, and tech stack files in `agent-os/product/`.
+Establish foundational product documentation through an interactive conversation. Creates mission, roadmap, and tech stack files in `product/`.
 
 ## Important Guidelines
 
-- **Always use AskUserQuestion tool** when asking the user anything
+- **Always use {{ask_user_questions_tool}} tool** when asking the user anything
 - **Keep it lightweight** — gather enough to create useful docs without over-documenting
 - **One question at a time** — don't overwhelm with multiple questions
 
@@ -12,12 +12,12 @@ Establish foundational product documentation through an interactive conversation
 
 ### Step 1: Check for Existing Product Docs
 
-Check if `agent-os/product/` exists and contains any of these files:
+Check if `product/` exists and contains any of these files:
 - `mission.md`
 - `roadmap.md`
 - `tech-stack.md`
 
-**If any files exist**, use AskUserQuestion:
+**If any files exist**, use {{ask_user_questions_tool}}:
 
 ```
 I found existing product documentation:
@@ -40,7 +40,7 @@ If option 3, stop here.
 
 ### Step 2: Gather Product Vision (for mission.md)
 
-Use AskUserQuestion:
+Use {{ask_user_questions_tool}}:
 
 ```
 Let's define your product's mission.
@@ -50,7 +50,7 @@ Let's define your product's mission.
 (Describe the core problem or pain point you're addressing)
 ```
 
-After they respond, use AskUserQuestion:
+After they respond, use {{ask_user_questions_tool}}:
 
 ```
 **Who is this product for?**
@@ -58,7 +58,7 @@ After they respond, use AskUserQuestion:
 (Describe your target users or audience)
 ```
 
-After they respond, use AskUserQuestion:
+After they respond, use {{ask_user_questions_tool}}:
 
 ```
 **What makes your solution unique?**
@@ -68,7 +68,7 @@ After they respond, use AskUserQuestion:
 
 ### Step 3: Gather Roadmap (for roadmap.md)
 
-Use AskUserQuestion:
+Use {{ask_user_questions_tool}}:
 
 ```
 Now let's outline your development roadmap.
@@ -78,7 +78,7 @@ Now let's outline your development roadmap.
 (List the core features needed for the first usable version)
 ```
 
-After they respond, use AskUserQuestion:
+After they respond, use {{ask_user_questions_tool}}:
 
 ```
 **What features are planned for after launch?**
@@ -88,9 +88,9 @@ After they respond, use AskUserQuestion:
 
 ### Step 4: Establish Tech Stack (for tech-stack.md)
 
-First, check if `agent-os/standards/global/tech-stack.md` exists.
+First, check if `better-agents/standards/global/tech-stack.md` exists.
 
-**If the tech-stack standard exists**, read it and use AskUserQuestion:
+**If the tech-stack standard exists**, read it and use {{ask_user_questions_tool}}:
 
 ```
 I found a tech stack standard in your standards:
@@ -108,7 +108,7 @@ Does this project use the same tech stack, or does it differ?
 If they choose option 1, use the standard's content for tech-stack.md.
 If they choose option 2, proceed to ask them to specify (see below).
 
-**If no tech-stack standard exists** (or they chose option 2 above), use AskUserQuestion:
+**If no tech-stack standard exists** (or they chose option 2 above), use {{ask_user_questions_tool}}:
 
 ```
 **What technologies does this project use?**
@@ -122,7 +122,7 @@ Please describe your tech stack:
 
 ### Step 5: Generate Files
 
-Create the `agent-os/product/` directory if it doesn't exist.
+Create the `product/` directory if it doesn't exist.
 
 Generate each file based on the information gathered:
 
@@ -189,9 +189,9 @@ After creating all files, output to user:
 ```
 ✓ Product documentation created:
 
-  agent-os/product/mission.md
-  agent-os/product/roadmap.md
-  agent-os/product/tech-stack.md
+  product/mission.md
+  product/roadmap.md
+  product/tech-stack.md
 
 Review these files to ensure they accurately capture your product vision.
 You can edit them directly or run /plan-product again to update.

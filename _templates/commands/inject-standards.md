@@ -22,7 +22,7 @@ Analyzes context and suggests relevant standards.
 ```
 Directly injects specified standards without suggestions.
 
-**Note:** `root` is a reserved keyword — it refers to `.md` files directly in `agent-os/standards/` (not in a subfolder).
+**Note:** `root` is a reserved keyword — it refers to `.md` files directly in `better-agents/standards/` (not in a subfolder).
 
 ## Process
 
@@ -33,7 +33,7 @@ Before injecting standards, determine which scenario we're in. Read the current 
 **Three scenarios:**
 
 1. **Conversation** — Regular chat, implementing code, answering questions
-2. **Creating a Skill** — Building a `.claude/skills/` file
+2. **Creating a Skill** — Building an [agentic skill][(https://docs.anthropic.com/claude/docs/skills-overview)](https://agentskills.io/home) in `.claude/skills/` file
 3. **Shaping/Planning** — In plan mode, building a spec, running `/shape-spec`
 
 **Detection logic:**
@@ -42,7 +42,7 @@ Before injecting standards, determine which scenario we're in. Read the current 
 - If conversation clearly mentions creating a skill, editing `.claude/skills/`, or building a reusable procedure → **Creating a Skill**
 - Otherwise → **Ask to confirm** (do not assume)
 
-**If neither skill nor plan is clearly detected**, use AskUserQuestion to confirm:
+**If neither skill nor plan is clearly detected**, use {{ask_user_questions_tool}} to confirm:
 
 ```
 I'll inject the relevant standards. How should I format them?
@@ -58,9 +58,9 @@ Always ask when uncertain — don't assume conversation by default.
 
 ### Step 2: Read the Index (Auto-Suggest Mode)
 
-Read `agent-os/standards/index.yml` to get the list of available standards and their descriptions.
+Read `better-agents/standards/index.toml` to get the list of available standards and their descriptions.
 
-If index.yml doesn't exist or is empty:
+If index.toml doesn't exist or is empty:
 ```
 No standards index found. Run /discover-standards first to create standards,
 or /index-standards if you have standards files without an index.
@@ -75,7 +75,7 @@ Look at the current conversation to understand what the user is working on:
 
 ### Step 4: Match and Suggest
 
-Match index descriptions against the context. Use AskUserQuestion to present suggestions:
+Match index descriptions against the context. Use {{ask_user_questions_tool}} to present suggestions:
 
 ```
 Based on your task, these standards may be relevant:
@@ -123,7 +123,7 @@ I've read the following standards as they are relevant to what we're working on:
 
 #### Scenario: Creating a Skill
 
-First, use AskUserQuestion to determine how to include the standards:
+First, use {{ask_user_questions_tool}} to determine how to include the standards:
 
 ```
 How should these standards be included in your skill?
@@ -139,9 +139,9 @@ Which approach? (1 or 2)
 ```
 Be sure to include references to the following standards files in the appropriate location in the file(s) that make up this skill:
 
-@agent-os/standards/api/response-format.md
-@agent-os/standards/api/error-handling.md
-@agent-os/standards/global/naming.md
+@better-agents/standards/api/response-format.md
+@better-agents/standards/api/error-handling.md
+@better-agents/standards/global/naming.md
 
 These standards cover:
 - API response envelope structure, status codes
@@ -176,7 +176,7 @@ These standards cover:
 
 #### Scenario: Shaping/Planning
 
-First, use AskUserQuestion to determine how to include the standards:
+First, use {{ask_user_questions_tool}} to determine how to include the standards:
 
 ```
 How should these standards be included in your plan?
@@ -192,9 +192,9 @@ Which approach? (1 or 2)
 ```
 Be sure to include references to the following standards files in the appropriate location in the plan we're building:
 
-@agent-os/standards/api/response-format.md
-@agent-os/standards/api/error-handling.md
-@agent-os/standards/global/naming.md
+@better-agents/standards/api/response-format.md
+@better-agents/standards/api/error-handling.md
+@better-agents/standards/global/naming.md
 
 These standards cover:
 - API response envelope structure, status codes
@@ -251,10 +251,10 @@ Same as auto-suggest mode.
 ### Step 2: Parse Arguments
 
 Arguments can be:
-- **Folder name** — `api` → inject all `.md` files in `agent-os/standards/api/`
-- **Folder/file** — `api/response-format` → inject `agent-os/standards/api/response-format.md`
-- **Root folder** — `root` → inject all `.md` files directly in `agent-os/standards/` (not in subfolders)
-- **Root file** — `root/naming` → inject `agent-os/standards/naming.md`
+- **Folder name** — `api` → inject all `.md` files in `better-agents/standards/api/`
+- **Folder/file** — `api/response-format` → inject `better-agents/standards/api/response-format.md`
+- **Root folder** — `root` → inject all `.md` files directly in `better-agents/standards/` (not in subfolders)
+- **Root file** — `root/naming` → inject `better-agents/standards/naming.md`
 
 Multiple arguments inject multiple standards.
 

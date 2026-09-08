@@ -4,7 +4,7 @@ Extract tribal knowledge from your codebase into concise, documented standards.
 
 ## Important Guidelines
 
-- **Always use AskUserQuestion tool** when asking the user anything
+- **Always use {{ask_user_questions_tool}} tool** when asking the user anything
 - **Write concise standards** — Use minimal words. Standards must be scannable by AI agents without bloating context windows.
 - **Offer suggestions** — Present options the user can confirm, choose between, or correct. Don't make them think harder than necessary.
 
@@ -21,7 +21,7 @@ If no area was specified:
    - **Frontend areas:** UI components, styling/CSS, state management, forms, routing
    - **Backend areas:** API routes, database/models, authentication, background jobs
    - **Cross-cutting:** Error handling, validation, testing, naming conventions, file structure
-3. Use AskUserQuestion to present the areas:
+3. Use {{ask_user_questions_tool}} to present the areas:
 
 ```
 I've identified these areas in your codebase:
@@ -47,7 +47,7 @@ Once an area is determined:
    - **Tribal** — Things a new developer wouldn't know without being told
    - **Consistent** — Patterns repeated across multiple files
 
-3. Use AskUserQuestion to present findings and let user select:
+3. Use {{ask_user_questions_tool}} to present findings and let user select:
 
 ```
 I analyzed [area] and found these potential standards worth documenting:
@@ -71,7 +71,7 @@ Wait for user selection before proceeding.
 
 **IMPORTANT:** For each selected standard, you MUST complete this full loop before moving to the next standard:
 
-1. **Ask 1-2 clarifying questions** about the "why" behind the pattern. Use your AskUserQuestion tool for this.
+1. **Ask 1-2 clarifying questions** about the "why" behind the pattern. Use your {{ask_user_questions_tool}} tool for this.
 2. **Wait for user response**
 3. **Draft the standard** incorporating their answer
 4. **Confirm with user** before creating the file
@@ -94,7 +94,7 @@ For each standard (after completing Step 3's Q&A):
 
 2. Check if a related standard file already exists — append to it if so
 
-3. Draft the content and use AskUserQuestion to confirm:
+3. Draft the content and use {{ask_user_questions_tool}} to confirm:
 
 ```
 Here's the draft for api/response-format.md:
@@ -117,15 +117,15 @@ All API responses use this envelope:
 Create this file? (yes / edit: [your changes] / skip)
 ```
 
-4. Create or update the file in `agent-os/standards/[folder]/`
+4. Create or update the file in `better-agents/standards/[folder]/`
 5. **Then repeat Steps 3-4 for the next selected standard**
 
 ### Step 5: Update the Index
 
 After all standards are created:
 
-1. Scan `agent-os/standards/` for all `.md` files
-2. For each new file without an index entry, use AskUserQuestion:
+1. Scan `better-agents/standards/` for all `.md` files
+2. For each new file without an index entry, use {{ask_user_questions_tool}}:
 
 ```
 New standard needs an index entry:
@@ -136,7 +136,7 @@ Suggested description: "API response envelope structure and error format"
 Accept this description? (yes / or type a better one)
 ```
 
-3. Update `agent-os/standards/index.yml`:
+3. Update `better-agents/standards/index.toml`:
 
 ```yaml
 api:
@@ -148,7 +148,7 @@ Alphabetize by folder, then by filename.
 
 ### Step 6: Offer to Continue
 
-Use AskUserQuestion:
+Use {{ask_user_questions_tool}}:
 
 ```
 Standards created for [area]:
@@ -160,8 +160,8 @@ Would you like to discover standards in another area, or are we done?
 
 ## Output Location
 
-All standards: `agent-os/standards/[folder]/[standard].md`
-Index file: `agent-os/standards/index.yml`
+All standards: `better-agents/standards/[folder]/[standard].md`
+Index file: `better-agents/standards/index.toml`
 
 ## Writing Concise Standards
 

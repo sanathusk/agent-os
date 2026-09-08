@@ -21,8 +21,8 @@ permissions:
 
 env:
   REPO: ${{ github.repository }}
-  IDEAS_URL: https://github.com/buildermethods/agent-os/discussions/categories/ideas
-  CONTRIBUTING_URL: https://github.com/buildermethods/agent-os/blob/main/.github/CONTRIBUTING.md
+  IDEAS_URL: https://github.com/sanathusk/better-agents/discussions/categories/ideas
+  CONTRIBUTING_URL: https://github.com/sanathusk/better-agents/blob/main/.github/CONTRIBUTING.md
 
 jobs:
   decline:

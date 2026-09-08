@@ -4,7 +4,7 @@ Gather context and structure planning for significant work. **Run this command w
 
 ## Important Guidelines
 
-- **Always use AskUserQuestion tool** when asking the user anything
+- **Always use {{ask_user_questions_tool}} tool** when asking the user anything
 - **Offer suggestions** — Present options the user can confirm, adjust, or correct
 - **Keep it lightweight** — This is shaping, not exhaustive documentation
 
@@ -26,7 +26,7 @@ Do not proceed with any steps below until confirmed to be in plan mode.
 
 ### Step 1: Clarify What We're Building
 
-Use AskUserQuestion to understand the scope:
+Use {{ask_user_questions_tool}} to understand the scope:
 
 ```
 What are we building? Please describe the feature or change.
@@ -41,7 +41,7 @@ Based on their response, ask 1-2 clarifying questions if the scope is unclear. E
 
 ### Step 2: Gather Visuals
 
-Use AskUserQuestion:
+Use {{ask_user_questions_tool}}:
 
 ```
 Do you have any visuals to reference?
@@ -57,7 +57,7 @@ If visuals are provided, note them for inclusion in the spec folder.
 
 ### Step 3: Identify Reference Implementations
 
-Use AskUserQuestion:
+Use {{ask_user_questions_tool}}:
 
 ```
 Is there similar code in this codebase I should reference?
@@ -74,12 +74,12 @@ If references are provided, read and analyze them to inform the plan.
 
 ### Step 4: Check Product Context
 
-Check if `agent-os/product/` exists and contains files.
+Check if `better-agents/product/` exists and contains files.
 
-If it exists, read key files (like `mission.md`, `roadmap.md`, `tech-stack.md`) and use AskUserQuestion:
+If it exists, read key files (like `mission.md`, `roadmap.md`, `tech-stack.md`) and use {{ask_user_questions_tool}}:
 
 ```
-I found product context in agent-os/product/. Should this feature align with any specific product goals or constraints?
+I found product context in better-agents/product/. Should this feature align with any specific product goals or constraints?
 
 Key points from your product docs:
 - [summarize relevant points]
@@ -91,9 +91,9 @@ If no product folder exists, skip this step.
 
 ### Step 5: Surface Relevant Standards
 
-Read `agent-os/standards/index.yml` to identify relevant standards based on the feature being built.
+Read `better-agents/standards/index.toml` to identify relevant standards based on the feature being built.
 
-Use AskUserQuestion to confirm:
+Use {{ask_user_questions_tool}} to confirm:
 
 ```
 Based on what we're building, these standards may apply:
@@ -120,7 +120,7 @@ Where:
 
 Example: `2026-01-15-1430-user-comment-system/`
 
-**Note:** If `agent-os/specs/` doesn't exist, create it when saving the spec folder.
+**Note:** If `better-agents/specs/` doesn't exist, create it when saving the spec folder.
 
 ### Step 7: Structure the Plan
 
@@ -135,7 +135,7 @@ Here's the plan structure. Task 1 saves all our shaping work before implementati
 
 ## Task 1: Save Spec Documentation
 
-Create `agent-os/specs/{folder-name}/` with:
+Create `better-agents/specs/{folder-name}/` with:
 
 - **plan.md** — This full plan
 - **shape.md** — Shaping notes (scope, decisions, context from our conversation)
@@ -183,7 +183,7 @@ Ready to start? (approve / adjust)
 The spec folder will contain:
 
 ```
-agent-os/specs/{YYYY-MM-DD-HHMM-feature-slug}/
+better-agents/specs/{YYYY-MM-DD-HHMM-feature-slug}/
 ├── plan.md           # The full plan
 ├── shape.md          # Shaping decisions and context
 ├── standards.md      # Which standards apply and key points
