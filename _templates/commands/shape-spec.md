@@ -2,11 +2,7 @@
 
 Gather context and structure planning for significant work. **Run this command while in plan mode.**
 
-## Important Guidelines
-
-- **Always use {{ask_user_questions_tool}} tool** when asking the user anything
-- **Offer suggestions** — Present options the user can confirm, adjust, or correct
-- **Keep it lightweight** — This is shaping, not exhaustive documentation
+![[!_guidelines]]
 
 ## Prerequisites
 

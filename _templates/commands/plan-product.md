@@ -2,10 +2,8 @@
 
 Establish foundational product documentation through an interactive conversation. Creates mission, roadmap, and tech stack files in `product/`.
 
-## Important Guidelines
+![[!_guidelines]]
 
-- **Always use {{ask_user_questions_tool}} tool** when asking the user anything
-- **Keep it lightweight** — gather enough to create useful docs without over-documenting
 - **One question at a time** — don't overwhelm with multiple questions
 
 ## Process
